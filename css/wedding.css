@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   WEDDING WEBSITE — STYLES (Original Clean + CSS Butterflies)
+   WEDDING WEBSITE — STYLES (Original Clean + Real CSS Butterflies)
    Rismina Shafi & Nadirsha Mahin
    15 November 2026
 ══════════════════════════════════════════ */
@@ -91,7 +91,7 @@ img { display: block; }
   background: linear-gradient(180deg, rgba(18,12,31,0.3) 0%, rgba(18,12,31,0.15) 50%, rgba(10,6,20,0.55) 100%);
 }
 
-#splash > *:not(.splash-bg):not(.petals):not(.css-butterflies) { position: relative; z-index: 2; }
+#splash > *:not(.splash-bg):not(.petals):not(.butterflies-wrap) { position: relative; z-index: 2; }
 
 .music-pill {
   position: absolute;
@@ -212,27 +212,49 @@ img { display: block; }
 }
 
 /* ══════════════════════════════════════════
-   PURE CSS GOLDEN BUTTERFLIES EFFECT
+   REAL GOLDEN BUTTERFLIES ANIMATION STYLES
 ══════════════════════════════════════════ */
-#splash::after, #details::after {
-  content: "";
+.butterflies-wrap {
   position: absolute;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
   z-index: 3;
-  background-image: 
-    radial-gradient(circle 3px at 20% 80%, rgba(212,175,55,0.8) 100%, transparent 0%),
-    radial-gradient(circle 2.5px at 70% 90%, rgba(245,230,179,0.9) 100%, transparent 0%),
-    radial-gradient(circle 3.5px at 40% 70%, rgba(212,175,55,0.7) 100%, transparent 0%);
-  background-size: 100% 120%;
-  animation: cssButterfliesFly 8s ease-in-out infinite;
 }
 
-@keyframes cssButterfliesFly {
-  0% { transform: translateY(0) scale(1); opacity: 0.3; }
-  50% { transform: translateY(-40px) scale(1.05); opacity: 0.9; }
-  100% { transform: translateY(0) scale(1); opacity: 0.3; }
+.golden-butterfly {
+  position: absolute;
+  bottom: -40px;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%23d4af37' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 3c-1.5 2-4 4-6 5-2 1-3 3-3 5 0 2 1.5 3.5 3.5 3.5 1.5 0 3-1 5.5-3 2.5 2 4 3 5.5 3 2 0 3.5-1.5 3.5-3.5 0-2-1-4-3-5-2-1-4.5-3-6-5z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.9));
+  animation: floatButterfly var(--dur) ease-in-out var(--delay) infinite;
+}
+
+@keyframes floatButterfly {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+    transform: translateY(-25vh) translateX(35px) scale(1) rotate(15deg);
+  }
+  50% {
+    transform: translateY(-55vh) translateX(-40px) scale(0.9) rotate(-15deg);
+  }
+  80% {
+    opacity: 0.7;
+    transform: translateY(-85vh) translateX(30px) scale(1.1) rotate(10deg);
+  }
+  100% {
+    transform: translateY(-110vh) translateX(-25px) scale(0.6) rotate(-10deg);
+    opacity: 0;
+  }
 }
 
 #details { background: #120c1f !important; }
