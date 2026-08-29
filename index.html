@@ -6,7 +6,6 @@
   <meta name="theme-color" content="#f5c6e8" />
   <title>Rismina Shafi weds Nadirsha Mahin | Wedding Invitation</title>
 
-  <!-- Open Graph / WhatsApp Preview Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nadirshamahin7736.github.io/rismina-wedding/">
   <meta property="og:title" content="Wedding Invitation — Rismina & Nadirsha">
@@ -15,21 +14,19 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="1600">
 
-  <!-- Twitter Card -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://nadirshamahin7736.github.io/rismina-wedding/">
   <meta property="twitter:title" content="Wedding Invitation — Rismina & Nadirsha">
   <meta property="twitter:description" content="Join us to celebrate our wedding on Sunday, 15 Nov 2026, 12:00 PM onwards at Fareedhiya Shadi Mahal, Moonamkutti, Kollam.">
   <meta property="twitter:image" content="https://nadirshamahin7736.github.io/rismina-wedding/assets/preview.jpg?v=2">
 
-  <!-- Luxury Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:wght@300;400;500;600&family=Sora:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/wedding.css?v=12" />
+  <link rel="stylesheet" href="css/wedding.css?v=13" />
 
   <style>
-    /* ── Royal Intro Video Overlay Styles ── */
+    /* ── Ultra Smooth Intro Video & Loader Styles ── */
     #introVideoScreen {
       position: fixed;
       inset: 0;
@@ -62,6 +59,37 @@
       height: 100%;
       object-fit: cover;
     }
+    /* Loading Spinner before video starts */
+    #videoLoader {
+      position: absolute;
+      inset: 0;
+      background: #120c1f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      z-index: 5;
+      transition: opacity 0.5s ease;
+    }
+    .spinner-ring {
+      width: 48px;
+      height: 48px;
+      border: 3px solid rgba(212, 175, 55, 0.2);
+      border-top-color: #d4af37;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    .spinner-text {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      color: #f5e6b3;
+      letter-spacing: 0.1em;
+      font-style: italic;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
     .skip-video-btn {
       position: absolute;
       bottom: 35px;
@@ -87,10 +115,11 @@
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════
-       INTRO VIDEO SCREEN
-   ═══════════════════════════════════════ -->
   <div id="introVideoScreen">
+    <div id="videoLoader">
+      <div class="spinner-ring"></div>
+      <span class="spinner-text">Loading Invitation...</span>
+    </div>
     <div class="video-frame-wrap">
       <video id="introVideo" playsinline autoplay muted preload="auto">
         <source src="assets/save-date-video.mp4" type="video/mp4" />
@@ -99,9 +128,6 @@
     <button class="skip-video-btn" id="skipVideoBtn">Skip Intro ➔</button>
   </div>
 
-  <!-- ═══════════════════════════════════════
-       PAGE 1 — SPLASH / HERO
-   ═══════════════════════════════════════ -->
   <section id="splash" class="page">
 
     <div class="splash-bg">
@@ -109,7 +135,6 @@
       <div class="splash-overlay"></div>
     </div>
 
-    <!-- Music pill (top-right) -->
     <button class="music-pill" id="musicPill" aria-label="Play Nikkah Nasheed">
       <span class="music-pill-label">Nikkah nasheed</span>
       <span class="music-pill-btn">
@@ -118,36 +143,29 @@
       </span>
     </button>
 
-    <!-- Bismillah calligraphy -->
     <div class="bismillah splash-enter">
       <img src="assets/bismillah.svg" alt="Bismillah ir-Rahman ir-Raheem" class="bismillah-img" />
     </div>
 
-    <!-- Malayalam title logo -->
     <div class="splash-title-logo splash-enter">
       <img src="assets/malayalam-logo.svg" alt="" class="splash-title-img" />
     </div>
 
-    <!-- Invite text -->
     <p class="splash-invite splash-enter">
       We cordially invite You to honor us with Your presence at the blessed occasion of our wedding
     </p>
 
-    <!-- Bride name -->
     <div class="splash-groom splash-enter">
       <span>Rismina Shafi</span>
     </div>
 
-    <!-- "weds" badge -->
     <div class="splash-weds-wrap splash-enter">
       <div class="splash-weds-bar"></div>
       <span class="splash-weds">weds</span>
     </div>
 
-    <!-- Groom name -->
     <p class="splash-bride splash-enter">Nadirsha Mahin</p>
 
-    <!-- Countdown timer -->
     <div class="countdown splash-enter" id="countdown">
       <div class="count-unit">
         <span class="count-label">Days</span>
@@ -176,13 +194,11 @@
       </div>
     </div>
 
-    <!-- Date + venue -->
     <div class="event-meta splash-enter">
       <p class="event-date">Sunday, 15 November 2026 · 12:00 PM Onwards</p>
       <p class="event-venue">Fareedhiya Shadi Mahal, Moonamkutti, Kollam</p>
     </div>
 
-    <!-- Swipe CTA -->
     <div class="swipe-wrap splash-enter">
       <div class="swipe-track" id="swipeTrack" role="button" aria-label="Swipe right to confirm attendance">
         <div class="swipe-thumb" id="swipeThumb">
@@ -193,7 +209,6 @@
       </div>
     </div>
 
-    <!-- Floating petals -->
     <div class="petals" aria-hidden="true">
       <span class="petal" style="--x:10%;--delay:0s;--dur:6s"></span>
       <span class="petal" style="--x:25%;--delay:1.5s;--dur:7s"></span>
@@ -204,17 +219,12 @@
 
   </section>
 
-  <!-- ═══════════════════════════════════════
-       PAGE 2 — DETAILS
-   ═══════════════════════════════════════ -->
   <section id="details" class="page" aria-hidden="true">
 
-    <!-- Hero top -->
     <div class="details-hero">
       <img src="assets/details-hero-bg.jpg" alt="" aria-hidden="true" class="details-hero-bg" />
       <div class="details-hero-overlay"></div>
 
-      <!-- Music pill -->
       <button class="music-pill music-pill-details" id="musicPillDetails" aria-label="Toggle music">
         <span class="music-pill-label">Nikkah nasheed</span>
         <span class="music-pill-btn">
@@ -223,21 +233,17 @@
         </span>
       </button>
 
-      <!-- Bride name -->
       <div class="dh-groom">
         <span>Rismina Shafi</span>
       </div>
 
-      <!-- "weds" badge -->
       <div class="dh-weds-wrap">
         <div class="dh-weds-bar"></div>
         <span class="dh-weds">weds</span>
       </div>
 
-      <!-- Groom name -->
       <p class="dh-bride">Nadirsha Mahin</p>
 
-      <!-- Sparkle divider -->
       <div class="dh-divider-row">
         <div class="dh-divider-line"></div>
         <span class="dh-sparkle-star">✦</span>
@@ -245,10 +251,8 @@
       </div>
     </div>
 
-    <!-- Scrollable content card -->
     <div class="details-sheet">
 
-      <!-- Save the date card -->
       <div class="save-date-card">
         <div class="sdt-ornament">
           <div class="sdt-line"></div>
@@ -263,7 +267,6 @@
         </a>
       </div>
 
-      <!-- ── Venue ── -->
       <div class="card-section">
         <h2 class="section-heading">Venue</h2>
         <div class="info-card venue-elegant">
@@ -286,7 +289,6 @@
         </div>
       </div>
 
-      <!-- ── For Enquiry ── -->
       <div class="card-section">
         <h2 class="section-heading">For Enquiry</h2>
 
@@ -321,7 +323,6 @@
         </div>
       </div>
 
-      <!-- ── How to Reach ── -->
       <div class="card-section">
         <h2 class="section-heading">How to Reach</h2>
         <div class="transport-accordion">
@@ -377,7 +378,6 @@
         </div>
       </div>
 
-      <!-- ── Photo Gallery ── -->
       <div class="card-section">
         <h2 class="section-heading">Photo Gallery</h2>
         <div class="info-card selfie-card">
@@ -398,12 +398,10 @@
         </div>
       </div>
 
-      <!-- ── Downloads ── -->
       <div class="card-section">
         <h2 class="section-heading">Downloads</h2>
         <div class="download-grid">
           
-          <!-- Card 1: Our Story Begins -->
           <div class="info-card download-card">
             <div class="download-thumb-wrap">
               <img src="assets/preview.jpg" alt="Our Story Begins Preview" class="download-thumb" />
@@ -412,7 +410,6 @@
             <a href="assets/preview.jpg" download="Our-Story-Begins-Rismina-Nadirsha.jpg" class="download-btn">Download</a>
           </div>
 
-          <!-- Card 2: Official Wedding Card -->
           <div class="info-card download-card">
             <div class="download-thumb-wrap">
               <img src="assets/wedding-card.jpg" alt="Official Wedding Card Preview" class="download-thumb" />
@@ -421,7 +418,6 @@
             <a href="assets/wedding-card.jpg" download="Rismina-Nadirsha-Wedding-Card.jpg" class="download-btn">Download</a>
           </div>
 
-          <!-- Card 3: Teaser / Save the Date Video -->
           <div class="info-card download-card">
             <div class="download-thumb-wrap placeholder-thumb">
               <span style="font-size: 30px;">🎬</span>
@@ -438,21 +434,17 @@
         <p class="footer-names">Rismina & Nadirsha</p>
       </footer>
 
-    </div><!-- /details-sheet -->
-  </section>
+    </div></section>
 
-  <!-- Background music -->
   <audio id="bgMusic" loop preload="auto">
     <source src="audio/nikah-nasheed.mp3" type="audio/mpeg" />
   </audio>
 
-  <!-- ════════════════════════════════════════
-        INTRO VIDEO SAFE FALLBACK JS
-   ════════════════════════════════════════ -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const introScreen = document.getElementById('introVideoScreen');
       const introVideo = document.getElementById('introVideo');
+      const videoLoader = document.getElementById('videoLoader');
       const skipBtn = document.getElementById('skipVideoBtn');
       const audio = document.getElementById('bgMusic');
 
@@ -469,13 +461,20 @@
       }
 
       if (introVideo) {
-        // Fallback safety timeout: if video takes more than 7 seconds to finish or buffers, auto-dismiss so it never gets stuck
-        const safetyTimer = setTimeout(dismissIntro, 7000);
+        // Hide loader as soon as video can play smoothly
+        introVideo.addEventListener('canplaythrough', function() {
+          if (videoLoader) {
+            videoLoader.style.opacity = '0';
+            setTimeout(() => videoLoader.remove(), 500);
+          }
+        });
+
+        // Safety fallback timer
+        const safetyTimer = setTimeout(dismissIntro, 8000);
 
         introVideo.play().then(() => {
-          // Video started successfully
+          // Playing successfully
         }).catch(() => {
-          // Autoplay blocked or failed, dismiss immediately
           dismissIntro();
         });
 
@@ -484,7 +483,6 @@
           dismissIntro();
         });
 
-        // Also allow clicking anywhere on the screen to skip instantly if needed
         introScreen.addEventListener('click', dismissIntro);
       }
 
@@ -556,7 +554,7 @@
       setInterval(updateCountdown, 1000);
       updateCountdown();
 
-      // 3. Strict Full-Swipe Logic (Only reveals upon full drag to the right)
+      // 3. Strict Full-Swipe Logic
       const track = document.getElementById('swipeTrack');
       const thumb = document.getElementById('swipeThumb');
       const fill = document.getElementById('swipeFill');
@@ -574,7 +572,6 @@
       if (thumb && track) {
         let startX = 0, isDragging = false;
 
-        // Mobile Touch Events
         thumb.addEventListener('touchstart', (e) => {
           isDragging = true;
           startX = e.touches[0].clientX;
@@ -590,7 +587,6 @@
             fill.style.width = `${currentX + 28}px`;
           }
 
-          // Trigger ONLY when dragged at least 88% across
           if (currentX >= maxDrag * 0.88) {
             isDragging = false;
             thumb.style.transform = `translate(${maxDrag}px, -50%)`;
@@ -602,12 +598,10 @@
         window.addEventListener('touchend', () => {
           if (!isDragging) return;
           isDragging = false;
-          // Snap back if released before full swipe
           thumb.style.transform = 'translate(0px, -50%)';
           fill.style.width = '0px';
         });
 
-        // Desktop Mouse Drag Events
         thumb.addEventListener('mousedown', (e) => {
           isDragging = true;
           startX = e.clientX;
