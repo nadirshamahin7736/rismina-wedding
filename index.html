@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#f5c6e8" />
   <title>Rismina Shafi weds Nadirsha Mahin | Wedding Invitation</title>
 
+  <!-- Open Graph / WhatsApp Preview Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nadirshamahin7736.github.io/rismina-wedding/">
   <meta property="og:title" content="Wedding Invitation — Rismina & Nadirsha">
@@ -14,19 +15,21 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="1600">
 
+  <!-- Twitter Card -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://nadirshamahin7736.github.io/rismina-wedding/">
   <meta property="twitter:title" content="Wedding Invitation — Rismina & Nadirsha">
   <meta property="twitter:description" content="Join us to celebrate our wedding on Sunday, 15 Nov 2026, 12:00 PM onwards at Fareedhiya Shadi Mahal, Moonamkutti, Kollam.">
   <meta property="twitter:image" content="https://nadirshamahin7736.github.io/rismina-wedding/assets/preview.jpg?v=2">
 
+  <!-- Luxury Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:wght@300;400;500;600&family=Sora:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/wedding.css?v=10" />
+  <link rel="stylesheet" href="css/wedding.css?v=9" />
 
   <style>
-    /* ── Royal Intro Video Overlay Styles ── */
+    /* ── Intro Video Overlay Styles ── */
     #introVideoScreen {
       position: fixed;
       inset: 0;
@@ -43,17 +46,6 @@
       visibility: hidden;
       pointer-events: none;
     }
-    .video-frame-wrap {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 4px solid rgba(212, 175, 55, 0.45);
-      box-shadow: inset 0 0 40px rgba(157, 101, 255, 0.3);
-      overflow: hidden;
-    }
     #introVideo {
       width: 100%;
       height: 100%;
@@ -61,12 +53,12 @@
     }
     .skip-video-btn {
       position: absolute;
-      bottom: 35px;
-      padding: 10px 26px;
-      background: rgba(157, 101, 255, 0.45);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(212, 175, 55, 0.7);
+      bottom: 30px;
+      padding: 10px 24px;
+      background: rgba(157, 101, 255, 0.4);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.6);
       color: #f5e6b3;
       font-family: var(--font-sans);
       font-size: 13px;
@@ -74,25 +66,29 @@
       border-radius: 999px;
       cursor: pointer;
       z-index: 10000;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
       transition: background 0.2s;
     }
     .skip-video-btn:active {
-      background: rgba(157, 101, 255, 0.8);
+      background: rgba(157, 101, 255, 0.7);
     }
   </style>
 </head>
 <body>
 
+  <!-- ═══════════════════════════════════════
+       INTRO VIDEO SCREEN (Plays on first load)
+   ═══════════════════════════════════════ -->
   <div id="introVideoScreen">
-    <div class="video-frame-wrap">
-      <video id="introVideo" playsinline autoplay muted>
-        <source src="assets/save-date-video.mp4" type="video/mp4" />
-      </video>
-    </div>
+    <video id="introVideo" playsinline autoplay muted>
+      <source src="assets/save-date-video.mp4" type="video/mp4" />
+    </video>
     <button class="skip-video-btn" id="skipVideoBtn">Skip Intro ➔</button>
   </div>
 
+  <!-- ═══════════════════════════════════════
+       PAGE 1 — SPLASH / HERO
+   ═══════════════════════════════════════ -->
   <section id="splash" class="page">
 
     <div class="splash-bg">
@@ -100,6 +96,7 @@
       <div class="splash-overlay"></div>
     </div>
 
+    <!-- Music pill (top-right) -->
     <button class="music-pill" id="musicPill" aria-label="Play Nikkah Nasheed">
       <span class="music-pill-label">Nikkah nasheed</span>
       <span class="music-pill-btn">
@@ -108,29 +105,36 @@
       </span>
     </button>
 
+    <!-- Bismillah calligraphy -->
     <div class="bismillah splash-enter">
       <img src="assets/bismillah.svg" alt="Bismillah ir-Rahman ir-Raheem" class="bismillah-img" />
     </div>
 
+    <!-- Malayalam title logo -->
     <div class="splash-title-logo splash-enter">
       <img src="assets/malayalam-logo.svg" alt="" class="splash-title-img" />
     </div>
 
+    <!-- Invite text -->
     <p class="splash-invite splash-enter">
       We cordially invite You to honor us with Your presence at the blessed occasion of our wedding
     </p>
 
+    <!-- Bride name -->
     <div class="splash-groom splash-enter">
       <span>Rismina Shafi</span>
     </div>
 
+    <!-- "weds" badge -->
     <div class="splash-weds-wrap splash-enter">
       <div class="splash-weds-bar"></div>
       <span class="splash-weds">weds</span>
     </div>
 
+    <!-- Groom name -->
     <p class="splash-bride splash-enter">Nadirsha Mahin</p>
 
+    <!-- Countdown timer -->
     <div class="countdown splash-enter" id="countdown">
       <div class="count-unit">
         <span class="count-label">Days</span>
@@ -159,11 +163,13 @@
       </div>
     </div>
 
+    <!-- Date + venue -->
     <div class="event-meta splash-enter">
       <p class="event-date">Sunday, 15 November 2026 · 12:00 PM Onwards</p>
       <p class="event-venue">Fareedhiya Shadi Mahal, Moonamkutti, Kollam</p>
     </div>
 
+    <!-- Swipe CTA -->
     <div class="swipe-wrap splash-enter">
       <div class="swipe-track" id="swipeTrack" role="button" aria-label="Swipe right to confirm attendance">
         <div class="swipe-thumb" id="swipeThumb">
@@ -174,6 +180,7 @@
       </div>
     </div>
 
+    <!-- Floating petals -->
     <div class="petals" aria-hidden="true">
       <span class="petal" style="--x:10%;--delay:0s;--dur:6s"></span>
       <span class="petal" style="--x:25%;--delay:1.5s;--dur:7s"></span>
@@ -184,12 +191,17 @@
 
   </section>
 
+  <!-- ═══════════════════════════════════════
+       PAGE 2 — DETAILS
+   ═══════════════════════════════════════ -->
   <section id="details" class="page" aria-hidden="true">
 
+    <!-- Hero top -->
     <div class="details-hero">
       <img src="assets/details-hero-bg.jpg" alt="" aria-hidden="true" class="details-hero-bg" />
       <div class="details-hero-overlay"></div>
 
+      <!-- Music pill -->
       <button class="music-pill music-pill-details" id="musicPillDetails" aria-label="Toggle music">
         <span class="music-pill-label">Nikkah nasheed</span>
         <span class="music-pill-btn">
@@ -198,17 +210,21 @@
         </span>
       </button>
 
+      <!-- Bride name -->
       <div class="dh-groom">
         <span>Rismina Shafi</span>
       </div>
 
+      <!-- "weds" badge -->
       <div class="dh-weds-wrap">
         <div class="dh-weds-bar"></div>
         <span class="dh-weds">weds</span>
       </div>
 
+      <!-- Groom name -->
       <p class="dh-bride">Nadirsha Mahin</p>
 
+      <!-- Sparkle divider -->
       <div class="dh-divider-row">
         <div class="dh-divider-line"></div>
         <span class="dh-sparkle-star">✦</span>
@@ -216,8 +232,10 @@
       </div>
     </div>
 
+    <!-- Scrollable content card -->
     <div class="details-sheet">
 
+      <!-- Save the date card -->
       <div class="save-date-card">
         <div class="sdt-ornament">
           <div class="sdt-line"></div>
@@ -232,6 +250,7 @@
         </a>
       </div>
 
+      <!-- ── Venue ── -->
       <div class="card-section">
         <h2 class="section-heading">Venue</h2>
         <div class="info-card venue-elegant">
@@ -254,6 +273,7 @@
         </div>
       </div>
 
+      <!-- ── For Enquiry ── -->
       <div class="card-section">
         <h2 class="section-heading">For Enquiry</h2>
 
@@ -288,6 +308,7 @@
         </div>
       </div>
 
+      <!-- ── How to Reach ── -->
       <div class="card-section">
         <h2 class="section-heading">How to Reach</h2>
         <div class="transport-accordion">
@@ -343,6 +364,7 @@
         </div>
       </div>
 
+      <!-- ── Photo Gallery ── -->
       <div class="card-section">
         <h2 class="section-heading">Photo Gallery</h2>
         <div class="info-card selfie-card">
@@ -363,10 +385,12 @@
         </div>
       </div>
 
+      <!-- ── Downloads ── -->
       <div class="card-section">
         <h2 class="section-heading">Downloads</h2>
         <div class="download-grid">
           
+          <!-- Card 1: Our Story Begins -->
           <div class="info-card download-card">
             <div class="download-thumb-wrap">
               <img src="assets/preview.jpg" alt="Our Story Begins Preview" class="download-thumb" />
@@ -375,6 +399,7 @@
             <a href="assets/preview.jpg" download="Our-Story-Begins-Rismina-Nadirsha.jpg" class="download-btn">Download</a>
           </div>
 
+          <!-- Card 2: Official Wedding Card -->
           <div class="info-card download-card">
             <div class="download-thumb-wrap">
               <img src="assets/wedding-card.jpg" alt="Official Wedding Card Preview" class="download-thumb" />
@@ -383,6 +408,7 @@
             <a href="assets/wedding-card.jpg" download="Rismina-Nadirsha-Wedding-Card.jpg" class="download-btn">Download</a>
           </div>
 
+          <!-- Card 3: Teaser / Save the Date Video -->
           <div class="info-card download-card">
             <div class="download-thumb-wrap placeholder-thumb">
               <span style="font-size: 30px;">🎬</span>
@@ -399,15 +425,20 @@
         <p class="footer-names">Rismina & Nadirsha</p>
       </footer>
 
-    </div></section>
+    </div><!-- /details-sheet -->
+  </section>
 
+  <!-- Background music -->
   <audio id="bgMusic" loop preload="auto">
     <source src="audio/nikah-nasheed.mp3" type="audio/mpeg" />
   </audio>
 
+  <!-- ════════════════════════════════════════
+        INTRO VIDEO, COUNTDOWN & SWIPE JS
+   ════════════════════════════════════════ -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // 0. Intro Video Logic (Normal Speed with Royal Frame)
+      // 0. Intro Video Logic
       const introScreen = document.getElementById('introVideoScreen');
       const introVideo = document.getElementById('introVideo');
       const skipBtn = document.getElementById('skipVideoBtn');
@@ -417,13 +448,16 @@
         if (!introScreen) return;
         introScreen.classList.add('hide');
         if (introVideo) introVideo.pause();
+        // Play background music automatically once intro is skipped/finished
         if (audio && audio.paused) {
           audio.play().then(() => updateMusicUI(true)).catch(() => {});
         }
       }
 
       if (introVideo) {
-        introVideo.play().catch(() => {});
+        introVideo.play().catch(() => {
+          // If autoplay is blocked by browser, allow clicking anywhere or show skip immediately
+        });
         introVideo.addEventListener('ended', dismissIntro);
       }
 
@@ -482,3 +516,100 @@
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const pad = (n) => String(n).padStart(2, '0');
+        document.getElementById('cd-days').textContent = pad(d);
+        document.getElementById('cd-hours').textContent = pad(h);
+        document.getElementById('cd-mins').textContent = pad(m);
+        document.getElementById('cd-secs').textContent = pad(s);
+      }
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      // 3. Strict Full-Swipe Logic (Only reveals upon full drag to the right)
+      const track = document.getElementById('swipeTrack');
+      const thumb = document.getElementById('swipeThumb');
+      const fill = document.getElementById('swipeFill');
+      const details = document.getElementById('details');
+
+      function completeSwipe() {
+        if (!details) return;
+        details.classList.add('revealed');
+        if (track) track.classList.add('done');
+        if (audio && audio.paused) {
+          audio.play().then(() => updateMusicUI(true)).catch(() => {});
+        }
+      }
+
+      if (thumb && track) {
+        let startX = 0, isDragging = false;
+
+        // Mobile Touch Events
+        thumb.addEventListener('touchstart', (e) => {
+          isDragging = true;
+          startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (e) => {
+          if (!isDragging) return;
+          const currentX = e.touches[0].clientX - startX;
+          const maxDrag = track.clientWidth - thumb.clientWidth - 12;
+
+          if (currentX >= 0 && currentX <= maxDrag) {
+            thumb.style.transform = `translate(${currentX}px, -50%)`;
+            fill.style.width = `${currentX + 28}px`;
+          }
+
+          // Trigger ONLY when dragged at least 88% across
+          if (currentX >= maxDrag * 0.88) {
+            isDragging = false;
+            thumb.style.transform = `translate(${maxDrag}px, -50%)`;
+            fill.style.width = `100%`;
+            completeSwipe();
+          }
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+          if (!isDragging) return;
+          isDragging = false;
+          // Snap back if released before full swipe
+          thumb.style.transform = 'translate(0px, -50%)';
+          fill.style.width = '0px';
+        });
+
+        // Desktop Mouse Drag Events
+        thumb.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          startX = e.clientX;
+          e.preventDefault();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+          if (!isDragging) return;
+          const currentX = e.clientX - startX;
+          const maxDrag = track.clientWidth - thumb.clientWidth - 12;
+
+          if (currentX >= 0 && currentX <= maxDrag) {
+            thumb.style.transform = `translate(${currentX}px, -50%)`;
+            fill.style.width = `${currentX + 28}px`;
+          }
+
+          if (currentX >= maxDrag * 0.88) {
+            isDragging = false;
+            thumb.style.transform = `translate(${maxDrag}px, -50%)`;
+            fill.style.width = `100%`;
+            completeSwipe();
+          }
+        });
+
+        window.addEventListener('mouseup', () => {
+          if (!isDragging) return;
+          isDragging = false;
+          thumb.style.transform = 'translate(0px, -50%)';
+          fill.style.width = '0px';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
