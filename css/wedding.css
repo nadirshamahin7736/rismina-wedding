@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   WEDDING WEBSITE — ULTRA LUXURY GOLD NAMES STYLE
+   WEDDING WEBSITE — ASTONIA ROYAL GOLD NAMES
    Rismina Shafi & Nadirsha Mahin
    15 November 2026
 ══════════════════════════════════════════ */
@@ -134,10 +134,10 @@ img { display: block; }
 }
 
 /* ══════════════════════════════════════════
-   ULTRA RICH GOLD GRADIENT NAMES
+   ASTONIA FONT + ROYAL GOLD GRADIENT NAMES
 ══════════════════════════════════════════ */
 .splash-groom, .splash-bride, .dh-groom, .dh-bride {
-  font-family: var(--font-astonia);
+  font-family: var(--font-astonia) !important;
   font-size: clamp(32px, 9vw, 42px) !important;
   font-weight: 700 !important;
   background: linear-gradient(135deg, #fff6d6 0%, #e6c567 40%, #c59b27 70%, #fff1b0 100%);
