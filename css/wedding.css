@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   WEDDING WEBSITE — STYLES (Scaled Mosque Background & Glass Cards)
+   WEDDING WEBSITE — STYLES (Final Clean Background & Spacing)
    Rismina Shafi & Nadirsha Mahin
    15 November 2026 · Fareedhiya Shadi Mahal, Kollam
 ══════════════════════════════════════════ */
@@ -424,7 +424,7 @@ img { display: block; }
 @keyframes splashExit { to { opacity: 0.2; transform: scale(0.95); } }
 
 /* ════════════════════════════════════════════
-   DETAILS PAGE (Scaled Mosque BG to fit screen nicely)
+   DETAILS PAGE (Clean BG Position & Spacing)
 ════════════════════════════════════════════ */
 #details { background: #120c1f !important; }
 
@@ -551,17 +551,17 @@ img { display: block; }
   flex-shrink: 0;
 }
 
-/* ── Details Sheet (Scaled Down BG Image so entire Mosque fits nicely) ── */
+/* ── Details Sheet (Shifted Down & Clean BG Positioning) ── */
 .details-sheet {
-  background-image: url('../assets/details-bg.jpg') !important;
+  background: linear-gradient(180deg, rgba(18, 12, 31, 0.45) 0%, rgba(26, 16, 47, 0.6) 100%), url('../assets/details-bg.jpg') !important;
   background-size: 100% auto !important;
-  background-position: center top !important;
+  background-position: center 120px !important;
   background-repeat: repeat-y !important;
   color: #ffffff !important;
   border-radius: 24px 24px 0 0;
   margin-top: -40px;
-  padding: 0 16px calc(env(safe-area-inset-bottom, 24px) + 48px);
-  min-height: calc(100dvh - 280px);
+  padding: 24px 16px calc(env(safe-area-inset-bottom, 24px) + 80px);
+  min-height: calc(100dvh - 240px);
   position: relative;
   z-index: 5;
 }
@@ -574,7 +574,7 @@ img { display: block; }
   gap: 5px;
   padding: 22px 20px 20px;
   margin: 10px 0 16px;
-  background: rgba(12, 6, 25, 0.55) !important;
+  background: rgba(12, 6, 25, 0.65) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 0.75px solid rgba(212, 175, 55, 0.6) !important;
@@ -655,7 +655,7 @@ img { display: block; }
 }
 
 .info-card {
-  background: rgba(12, 6, 25, 0.55) !important;
+  background: rgba(12, 6, 25, 0.65) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 0.75px solid rgba(212, 175, 55, 0.55) !important;
@@ -759,7 +759,7 @@ img { display: block; }
 .transport-accordion { display: flex; flex-direction: column; gap: 8px; }
 
 .accordion-item {
-  background: rgba(12, 6, 25, 0.55) !important;
+  background: rgba(12, 6, 25, 0.65) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 0.75px solid rgba(212, 175, 55, 0.5) !important;
@@ -916,7 +916,7 @@ img { display: block; }
 .download-card {
   display: flex; flex-direction: column; gap: 10px;
   padding: 10px; align-items: center;
-  background: rgba(12, 6, 25, 0.55) !important;
+  background: rgba(12, 6, 25, 0.65) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 0.75px solid rgba(212,175,55,0.5) !important;
@@ -949,7 +949,11 @@ img { display: block; }
   box-shadow: none;
 }
 
-.wedding-footer { margin-top: 44px; text-align: center; padding-bottom: 12px; }
+.wedding-footer {
+  margin-top: 50px;
+  text-align: center;
+  padding-bottom: 40px;
+}
 .wedding-footer p {
   font-size: 13px; color: #ffffff !important;
   text-shadow: 0 1px 3px rgba(0,0,0,0.9);
