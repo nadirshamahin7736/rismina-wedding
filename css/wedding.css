@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   WEDDING WEBSITE — STYLES (Ultra-Glass & Clear Mosque BG)
+   WEDDING WEBSITE — STYLES (Scaled Mosque Background & Glass Cards)
    Rismina Shafi & Nadirsha Mahin
    15 November 2026 · Fareedhiya Shadi Mahal, Kollam
 ══════════════════════════════════════════ */
@@ -53,7 +53,7 @@
   --gold-dark:    #d4af37;
   --text-dark:    #ffffff;
   --text-body:    #fdf4ff;
-  --card-bg:      rgba(15, 8, 30, 0.35);
+  --card-bg:      rgba(12, 6, 25, 0.45);
   --border:       rgba(212, 175, 55, 0.55);
 
   --font-serif:    'AppleGaramond', 'Apple Garamond', 'Cormorant Garamond', Garamond, Georgia, serif;
@@ -424,7 +424,7 @@ img { display: block; }
 @keyframes splashExit { to { opacity: 0.2; transform: scale(0.95); } }
 
 /* ════════════════════════════════════════════
-   DETAILS PAGE (Transparent Glass Cards & Fully Visible Mosque BG)
+   DETAILS PAGE (Scaled Mosque BG to fit screen nicely)
 ════════════════════════════════════════════ */
 #details { background: #120c1f !important; }
 
@@ -551,12 +551,12 @@ img { display: block; }
   flex-shrink: 0;
 }
 
-/* ── Details Sheet (No Dark Overlay + Mosque Image Fully Visible) ── */
+/* ── Details Sheet (Scaled Down BG Image so entire Mosque fits nicely) ── */
 .details-sheet {
-  background: url('../assets/details-bg.jpg') !important;
-  background-size: cover !important;
+  background-image: url('../assets/details-bg.jpg') !important;
+  background-size: 100% auto !important;
   background-position: center top !important;
-  background-repeat: no-repeat !important;
+  background-repeat: repeat-y !important;
   color: #ffffff !important;
   border-radius: 24px 24px 0 0;
   margin-top: -40px;
@@ -574,7 +574,7 @@ img { display: block; }
   gap: 5px;
   padding: 22px 20px 20px;
   margin: 10px 0 16px;
-  background: rgba(12, 6, 25, 0.45) !important;
+  background: rgba(12, 6, 25, 0.55) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 0.75px solid rgba(212, 175, 55, 0.6) !important;
@@ -655,7 +655,7 @@ img { display: block; }
 }
 
 .info-card {
-  background: rgba(12, 6, 25, 0.45) !important;
+  background: rgba(12, 6, 25, 0.55) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 0.75px solid rgba(212, 175, 55, 0.55) !important;
@@ -759,7 +759,7 @@ img { display: block; }
 .transport-accordion { display: flex; flex-direction: column; gap: 8px; }
 
 .accordion-item {
-  background: rgba(12, 6, 25, 0.45) !important;
+  background: rgba(12, 6, 25, 0.55) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 0.75px solid rgba(212, 175, 55, 0.5) !important;
@@ -916,7 +916,7 @@ img { display: block; }
 .download-card {
   display: flex; flex-direction: column; gap: 10px;
   padding: 10px; align-items: center;
-  background: rgba(12, 6, 25, 0.45) !important;
+  background: rgba(12, 6, 25, 0.55) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 0.75px solid rgba(212,175,55,0.5) !important;
