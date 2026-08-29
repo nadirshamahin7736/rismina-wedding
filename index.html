@@ -23,10 +23,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:wght@300;400;500;600&family=Sora:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/wedding.css?v=16" />
+  <link rel="stylesheet" href="css/wedding.css?v=19" />
 
   <style>
-    /* ── Clean Intro Video Overlay Styles ── */
+    /* ── Intro Video & Start Overlay Styles ── */
     #introVideoScreen {
       position: fixed;
       inset: 0;
@@ -59,6 +59,45 @@
       height: 100%;
       object-fit: cover;
     }
+    /* Start Overlay Button */
+    #startOverlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(18, 12, 31, 0.92);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      z-index: 10001;
+      cursor: pointer;
+      transition: opacity 0.5s ease;
+    }
+    #startOverlay.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .start-btn {
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #d4af37, #aa771c);
+      color: #120c1f;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 999px;
+      border: none;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+      cursor: pointer;
+      letter-spacing: 0.05em;
+    }
+    .start-subtext {
+      color: #f5e6b3;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      opacity: 0.8;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
     .skip-video-btn {
       position: absolute;
       bottom: 35px;
@@ -85,8 +124,12 @@
 <body>
 
   <div id="introVideoScreen">
+    <div id="startOverlay">
+      <span class="start-subtext">Rismina & Nadirsha Wedding</span>
+      <button class="start-btn">Tap to Open Invitation ✦</button>
+    </div>
     <div class="video-frame-wrap">
-      <video id="introVideo" playsinline autoplay muted preload="auto">
+      <video id="introVideo" playsinline muted preload="auto">
         <source src="assets/save-date-video.mp4" type="video/mp4" />
       </video>
     </div>
@@ -375,6 +418,7 @@
             <a href="assets/preview.jpg" download="Our-Story-Begins-Rismina-Nadirsha.jpg" class="download-btn">Download</a>
           </div>
 
+          <div class="info-card download-btn-wrap" style="display:none;"></div>
           <div class="info-card download-card">
             <div class="download-thumb-wrap">
               <img src="assets/wedding-card.jpg" alt="Official Wedding Card Preview" class="download-thumb" />
@@ -409,43 +453,45 @@
     document.addEventListener('DOMContentLoaded', function() {
       const introScreen = document.getElementById('introVideoScreen');
       const introVideo = document.getElementById('introVideo');
+      const startOverlay = document.getElementById('startOverlay');
       const skipBtn = document.getElementById('skipVideoBtn');
       const audio = document.getElementById('bgMusic');
 
       let isDismissed = false;
-      let wasSkipped = false;
 
-      function dismissIntro(skipped) {
+      function dismissIntro() {
         if (isDismissed || !introScreen) return;
         isDismissed = true;
-        wasSkipped = !!skipped;
         introScreen.classList.add('hide');
         if (introVideo) introVideo.pause();
+      }
 
-        if (!wasSkipped && audio && audio.paused) {
+      function startExperience() {
+        if (startOverlay) {
+          startOverlay.classList.add('hide');
+        }
+        // Play song instantly
+        if (audio) {
           audio.play().then(() => updateMusicUI(true)).catch(() => {});
+        }
+        // Play video instantly
+        if (introVideo) {
+          introVideo.play().catch(() => {});
         }
       }
 
+      if (startOverlay) {
+        startOverlay.addEventListener('click', startExperience);
+      }
+
       if (introVideo) {
-        const safetyTimer = setTimeout(() => dismissIntro(true), 8000);
-
-        introVideo.play().then(() => {}).catch(() => {
-          dismissIntro(true);
-        });
-
-        introVideo.addEventListener('ended', function() {
-          clearTimeout(safetyTimer);
-          dismissIntro(false);
-        });
-
-        introScreen.addEventListener('click', () => dismissIntro(true));
+        introVideo.addEventListener('ended', dismissIntro);
       }
 
       if (skipBtn) {
         skipBtn.addEventListener('click', function(e) {
           e.stopPropagation();
-          dismissIntro(true);
+          dismissIntro();
         });
       }
 
@@ -510,7 +556,7 @@
       setInterval(updateCountdown, 1000);
       updateCountdown();
 
-      // 3. Strict Full-Swipe Logic -> Plays Music when Swipe Reaches ~88%
+      // 3. Swipe Logic
       const track = document.getElementById('swipeTrack');
       const thumb = document.getElementById('swipeThumb');
       const fill = document.getElementById('swipeFill');
