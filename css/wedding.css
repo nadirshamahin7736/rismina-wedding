@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   WEDDING WEBSITE — STYLES (Original Clean)
+   WEDDING WEBSITE — STYLES (Original Clean + CSS Butterflies)
    Rismina Shafi & Nadirsha Mahin
    15 November 2026
 ══════════════════════════════════════════ */
@@ -91,7 +91,7 @@ img { display: block; }
   background: linear-gradient(180deg, rgba(18,12,31,0.3) 0%, rgba(18,12,31,0.15) 50%, rgba(10,6,20,0.55) 100%);
 }
 
-#splash > *:not(.splash-bg):not(.petals) { position: relative; z-index: 2; }
+#splash > *:not(.splash-bg):not(.petals):not(.css-butterflies) { position: relative; z-index: 2; }
 
 .music-pill {
   position: absolute;
@@ -209,6 +209,30 @@ img { display: block; }
   0% { transform: translateY(0) rotate(0deg); opacity: 0; }
   8% { opacity: 0.75; }
   100% { transform: translateY(105vh) rotate(380deg); opacity: 0; }
+}
+
+/* ══════════════════════════════════════════
+   PURE CSS GOLDEN BUTTERFLIES EFFECT
+══════════════════════════════════════════ */
+#splash::after, #details::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 3;
+  background-image: 
+    radial-gradient(circle 3px at 20% 80%, rgba(212,175,55,0.8) 100%, transparent 0%),
+    radial-gradient(circle 2.5px at 70% 90%, rgba(245,230,179,0.9) 100%, transparent 0%),
+    radial-gradient(circle 3.5px at 40% 70%, rgba(212,175,55,0.7) 100%, transparent 0%);
+  background-size: 100% 120%;
+  animation: cssButterfliesFly 8s ease-in-out infinite;
+}
+
+@keyframes cssButterfliesFly {
+  0% { transform: translateY(0) scale(1); opacity: 0.3; }
+  50% { transform: translateY(-40px) scale(1.05); opacity: 0.9; }
+  100% { transform: translateY(0) scale(1); opacity: 0.3; }
 }
 
 #details { background: #120c1f !important; }
