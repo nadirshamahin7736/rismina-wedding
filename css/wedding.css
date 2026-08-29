@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   WEDDING WEBSITE — STYLES (Light & Clear Royal Purple Theme)
+   WEDDING WEBSITE — STYLES (Fully Responsive Layout)
    Rismina Shafi & Nadirsha Mahin
    15 November 2026 · Fareedhiya Shadi Mahal, Kollam
 ══════════════════════════════════════════ */
@@ -104,9 +104,17 @@ img { display: block; }
 #details::-webkit-scrollbar { width: 0; }
 
 /* ════════════════════════════════════════════
-   SPLASH PAGE
+   SPLASH PAGE — FLEXBOX RESPONSIVE LAYOUT
 ════════════════════════════════════════════ */
-#splash { display: block; overflow: hidden; }
+#splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: max(env(safe-area-inset-top, 0px), 16px) 20px max(env(safe-area-inset-bottom, 0px), 20px) 20px;
+  overflow: hidden;
+  position: relative;
+}
 
 .splash-bg {
   position: absolute;
@@ -124,18 +132,20 @@ img { display: block; }
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-    rgba(18,12,31,0.3) 0%,
-    rgba(18,12,31,0.15) 50%,
-    rgba(10,6,20,0.55) 100%);
+    rgba(18,12,31,0.35) 0%,
+    rgba(18,12,31,0.2) 50%,
+    rgba(10,6,20,0.6) 100%);
 }
 
 #splash > *:not(.splash-bg):not(.petals) {
-  position: absolute;
+  position: relative;
   z-index: 2;
 }
 
+/* ── Music Pill (Top Right) ── */
 .music-pill {
-  top: calc(max(env(safe-area-inset-top, 0px), 4px) + 8px);
+  position: absolute;
+  top: max(env(safe-area-inset-top, 0px), 12px);
   right: 16px;
   display: flex;
   align-items: center;
@@ -148,6 +158,7 @@ img { display: block; }
   -webkit-backdrop-filter: blur(10px);
   color: #fff1c5;
   transition: background 0.25s;
+  z-index: 10;
 }
 .music-pill:active { background: rgba(18,12,31,0.7); }
 .music-pill-label {
@@ -177,133 +188,117 @@ img { display: block; }
   50%      { opacity: 0.55; }
 }
 
+/* ── Splash Content Wrapper for perfect vertical spacing ── */
+.splash-content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 360px;
+  margin-top: 28px;
+  gap: 10px;
+  text-align: center;
+}
+
 .bismillah {
-  top: calc(max(env(safe-area-inset-top, 0px), 54px) + 41px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 104px;
-  height: 27px;
+  width: 90px;
+  height: 24px;
 }
 .bismillah-img {
-  width: 104px;
-  height: 27px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  object-position: center;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.8));
 }
 
 .splash-title-logo {
-  top: calc(max(env(safe-area-inset-top, 0px), 54px) + 80px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 224px;
-  height: 116px;
+  width: 190px;
+  height: 90px;
 }
 .splash-title-img {
-  width: 224px;
-  height: 116px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 3px 8px rgba(0,0,0,0.8));
 }
 
 .splash-invite {
-  top: calc(max(env(safe-area-inset-top, 0px), 54px) + 229px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(298px, calc(100% - 32px));
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   color: #fff1c5;
-  text-align: center;
   line-height: 1.3;
   text-shadow: 0 1px 4px rgba(0,0,0,0.9);
 }
 
 .splash-groom {
-  top: calc(max(env(safe-area-inset-top, 0px), 54px) + 275px);
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-family: var(--font-astonia);
-  font-size: clamp(34px, 10.1vw, 40px);
+  font-size: clamp(30px, 8.5vw, 38px);
   font-weight: 700;
   color: #fff;
-  text-align: center;
   line-height: 1.1;
   white-space: nowrap;
-  z-index: 2;
   text-shadow: 0 2px 10px rgba(0,0,0,0.9), 0 0 20px rgba(157,101,255,0.4);
 }
 
 .splash-weds-wrap {
-  top: calc(max(env(safe-area-inset-top, 0px), 54px) + 342px);
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 130px;
-  height: 64px;
-  z-index: 3;
+  width: 110px;
+  height: 40px;
+  margin: -4px 0;
 }
 .splash-weds-bar {
   position: absolute;
-  width: 80px;
-  height: 28px;
+  width: 70px;
+  height: 24px;
   background: #e5c158;
   border-radius: 3px;
-  transform: rotate(-21deg);
+  transform: rotate(-18deg);
   box-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 .splash-weds {
   position: relative;
   font-family: var(--font-comforter);
-  font-size: clamp(38px, 11.2vw, 44px);
+  font-size: clamp(34px, 10vw, 40px);
   color: #120c1f;
-  transform: rotate(-25deg);
+  transform: rotate(-22deg);
   line-height: 1;
   white-space: nowrap;
-  z-index: 1;
   font-weight: 700;
   text-shadow: 0 1px 2px rgba(255,255,255,0.4);
 }
 
 .splash-bride {
-  top: calc(max(env(safe-area-inset-top, 0px), 54px) + 398px);
-  left: 50%;
-  transform: translateX(-50%);
   font-family: var(--font-astonia);
-  font-size: clamp(34px, 10.1vw, 40px);
+  font-size: clamp(30px, 8.5vw, 38px);
   font-weight: 700;
   color: #fff;
-  text-align: center;
   line-height: 1.1;
   white-space: nowrap;
-  z-index: 2;
   text-shadow: 0 2px 10px rgba(0,0,0,0.9), 0 0 20px rgba(157,101,255,0.4);
 }
 
+/* ── Countdown ── */
 .countdown {
-  top: calc(max(env(safe-area-inset-top, 0px), 54px) + 487px);
-  left: 0; right: 0;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   gap: 5px;
+  margin-top: 6px;
 }
 
 .count-unit {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 .count-label {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   color: #fff1c5;
   letter-spacing: 0;
@@ -311,8 +306,8 @@ img { display: block; }
   text-shadow: 0 1px 4px rgba(0,0,0,0.9);
 }
 .count-box {
-  width: 60px;
-  height: 82px;
+  width: 52px;
+  height: 70px;
   border-radius: 6px;
   border: 1px solid rgba(229,193,88,0.9);
   background: linear-gradient(180deg, #4d2d7c 0%, #2f1754 100%);
@@ -333,7 +328,7 @@ img { display: block; }
 }
 .count-box span {
   font-family: 'Sora', var(--font-sans);
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   color: #fff1c5;
   letter-spacing: -0.03em;
@@ -344,39 +339,39 @@ img { display: block; }
 .count-sep {
   display: flex;
   align-items: center;
-  padding-bottom: 35px;
   color: #fff1c5;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
+  padding-bottom: 14px;
 }
 
+/* ── Event Date / Venue ── */
 .event-meta {
-  top: calc(max(env(safe-area-inset-top, 0px), 54px) + 607px);
-  left: 0; right: 0;
   text-align: center;
-  padding: 0 24px;
+  padding: 0 12px;
+  margin-top: 6px;
 }
 .event-date,
 .event-venue {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: #fff1c5;
   letter-spacing: -0.01em;
-  line-height: 1.4;
+  line-height: 1.35;
   text-shadow: 0 1px 5px rgba(0,0,0,0.95);
 }
 
+/* ── Swipe CTA ── */
 .swipe-wrap {
-  bottom: calc(env(safe-area-inset-bottom, 34px) + 22px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(296px, calc(100% - 48px));
+  width: min(296px, calc(100% - 32px));
+  margin-top: 8px;
+  margin-bottom: 4px;
 }
 .swipe-track {
   position: relative;
   width: 100%;
-  height: 78px;
+  height: 68px;
   border-radius: var(--radius-pill);
   background: rgba(18,12,31,0.6);
   backdrop-filter: blur(14px);
@@ -399,11 +394,11 @@ img { display: block; }
 }
 .swipe-thumb {
   position: absolute;
-  left: 8px;
+  left: 6px;
   top: 50%;
   transform: translateY(-50%);
-  width: 62px;
-  height: 62px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: #fff1c5;
   box-shadow: 0 4px 16px rgba(0,0,0,0.4);
@@ -415,17 +410,17 @@ img { display: block; }
   will-change: transform;
 }
 .swipe-thumb:active { cursor: grabbing; }
-.swipe-thumb svg { pointer-events: none; stroke: #120c1f; }
+.swipe-thumb svg { pointer-events: none; stroke: #120c1f; width: 22px; height: 22px; }
 .swipe-label {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 80px;
+  padding-left: 70px;
   padding-right: 12px;
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: #fff1c5;
   pointer-events: none;
@@ -439,6 +434,7 @@ img { display: block; }
 .swipe-track.done .swipe-thumb svg { stroke: #fff; }
 .swipe-track.done .swipe-label { color: #fff; padding-left: 0; font-weight: 600; }
 
+/* ── Petals ── */
 .petals {
   position: absolute;
   inset: 0;
@@ -495,7 +491,7 @@ img { display: block; }
 }
 
 /* ════════════════════════════════════════════
-   DETAILS PAGE (Lighter & Clearer Royal Purple Theme)
+   DETAILS PAGE
 ════════════════════════════════════════════ */
 #details { background: #241542 !important; }
 
@@ -622,7 +618,6 @@ img { display: block; }
   flex-shrink: 0;
 }
 
-/* ── Lighter Purple Sheet & Cards ── */
 .details-sheet {
   background: #241542 !important;
   color: #fff1c5 !important;
@@ -987,55 +982,9 @@ img { display: block; }
   color: #e5c158 !important; margin-top: 6px;
 }
 
-@media (max-height: 820px) {
-  .splash-groom, .splash-bride { font-size: clamp(26px, 7.7vw, 30px); }
-  .splash-weds  { font-size: clamp(28px, 8.9vw, 32px); }
-
-  .count-box        { width: 54px; height: 70px; }
-  .count-box span   { font-size: 24px; }
-  .count-label      { font-size: 12px; }
-  .count-sep        { padding-bottom: 28px; }
-
-  .swipe-wrap {
-    bottom: calc(max(env(safe-area-inset-bottom, 0px), 20px) + 16px);
-  }
-  .event-meta {
-    top: auto;
-    bottom: calc(max(env(safe-area-inset-bottom, 0px), 20px) + 96px);
-  }
-  .countdown {
-    top: auto;
-    bottom: calc(max(env(safe-area-inset-bottom, 0px), 20px) + 148px);
-  }
-
-  .swipe-track  { height: 68px; }
-  .swipe-thumb  { width: 54px; height: 54px; }
-  .swipe-label  { padding-left: 70px; font-size: 13px; }
-  .swipe-track.done .swipe-label { padding-left: 0; }
-}
-
-@media (max-height: 700px) {
-  .splash-invite {
-    top: calc(max(env(safe-area-inset-top, 0px), 44px) + 210px);
-    font-size: 10px;
-  }
-  .splash-groom {
-    top: calc(max(env(safe-area-inset-top, 0px), 44px) + 238px);
-    font-size: clamp(22px, 6.5vw, 24px);
-  }
-  .splash-weds-wrap {
-    top: calc(max(env(safe-area-inset-top, 0px), 44px) + 284px);
-    width: 100px; height: 48px;
-  }
-  .splash-bride {
-    top: calc(max(env(safe-area-inset-top, 0px), 44px) + 330px);
-    font-size: clamp(22px, 6.5vw, 24px);
-  }
-  .countdown {
-    bottom: calc(max(env(safe-area-inset-bottom, 0px), 16px) + 152px);
-  }
-}
-
+/* ════════════════════════════════════════════
+   DESKTOP & RESPONSIVE FIX (Prevents Zoom / Overflow issues)
+════════════════════════════════════════════ */
 @media (min-width: 620px) {
   html, body { background: #1a1a1a; }
   .page {
